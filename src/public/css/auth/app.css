@@ -1,0 +1,42 @@
+body.auth-bg {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(40deg, #fce4ec, #ffb7c5, #ff69b4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: #fff;
+    padding: 50px 40px;
+    border-radius: 16px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    color: #e38ac3;
+    font-size: 42px;
+    margin-bottom: 10px;
+    letter-spacing: 5px;
+}
+
+.btn {
+    width: 60%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(90deg, #a18cd1, #ff69b4);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+}
