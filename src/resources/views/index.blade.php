@@ -52,6 +52,7 @@
             <a href="/weight_logs/create" class="logs_create">データを追加</a>
         </form>
 
+        <!-- 検索件数 -->
         @if(isset($request_from) || isset($request_to))
         <p class="search-result">
             @if(request('from') && request('to'))
@@ -94,6 +95,7 @@
                 @endforeach
             </tbody>
         </table>
+        <!-- 検索がヒットしなかった時 -->
         @else
         <div class="no-data">
             該当するデータはありません。
