@@ -51,7 +51,7 @@
                     <input type="time" name="exercise_time" value="{{ old('exercise_time') }}">
                     <p class="error">
                         @error('exercise_time')
-                            {{ $message }}
+                        {{ $message }}
                         @enderror
                     </p>
                 </div>
@@ -61,7 +61,7 @@
                     <textarea name="exercise_content" placeholder="運動内容を追加">{{ old('exercise_content') }}</textarea>
                     <p class="error">
                         @error('exercise_content')
-                            {{ $message }}
+                        {{ $message }}
                         @enderror
                     </p>
                 </div>
@@ -71,15 +71,6 @@
                     <button type="submit" class="btn-submit">登録</button>
                 </div>
             </form>
-        <script>
-            const modal = document.getElementById('modal');
-            function openModal() {
-                modal.showModal();
-            }
-            function closeModal() {
-                modal.close();
-            }
-        </script>
 
         </div>
     </dialog>
@@ -182,18 +173,23 @@
     </div>
 
     <script>
-        function openModal() {
-            document.getElementById('modal').style.display = 'block';
-        }
-
-        function closeModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
-    </script>
-
-    @if($errors->any())
-    <script>
-        document.getElementById('modal').style.display = 'block';
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('modal');
+            window.openModal = function() {
+                modal.style.display = 'block';
+                modal.showModal();
+            }
+            window.closeModal = function() {
+                modal.close();
+                modal.style.display = 'none';
+            }
+        });
+    </script> @if($errors->any()) <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'block';
+            modal.showModal();
+        });
     </script>
     @endif
-@endsection
+    @endsection
