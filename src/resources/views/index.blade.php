@@ -8,6 +8,81 @@
 
 @section('content')
 <div class="container">
+    <!-- データ追加のボタンを押下するとモーダルウィンドが表示される -->
+    <dialog id="modal" class="modal">
+        <div class="modal-card">
+            <h2 class="modal-title">Weight Logを追加</h2>
+            <form action="/weight_logs/create" method="POST">
+                @csrf
+                <div class="form-group">
+                    <label>日付 <span class="required">必須</span></label>
+                    <input type="date" name="day" value="{{ old('date', date('Y-m-d')) }}">
+                    <p class="error">@error('date'){{ $message }}@enderror</p>
+                </div>
+
+                <div class="form-group">
+                    <label>体重 <span class="required">必須</span></label>
+                    <div class="input-unit">
+                        <input type="text" name="weight" placeholder="50.0" value="{{ old('weight') }}">
+                        <span>kg</span>
+                    </div>
+                    <p class="error">
+                        @error('weight')
+                        {{ $message }}
+                        @enderror
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label>摂取カロリー <span class="required">必須</span></label>
+                    <div class="input-unit">
+                        <input type="text" name="calories" placeholder="1200" value="{{ old('calorie') }}">
+                        <span>cal</span>
+                    </div>
+                    <p class="error">
+                        @error('calorie')
+                        {{ $message }}
+                        @enderror
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label>運動時間 <span class="required">必須</span></label>
+                    <input type="time" name="exercise_time" value="{{ old('exercise_time') }}">
+                    <p class="error">
+                        @error('exercise_time')
+                            {{ $message }}
+                        @enderror
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label>運動内容</label>
+                    <textarea name="exercise_content" placeholder="運動内容を追加">{{ old('exercise_content') }}</textarea>
+                    <p class="error">
+                        @error('exercise_content')
+                            {{ $message }}
+                        @enderror
+                    </p>
+                </div>
+
+                <div class="modal-buttons">
+                    <button type="button" class="btn-back" onclick="closeModal()">戻る</button>
+                    <button type="submit" class="btn-submit">登録</button>
+                </div>
+            </form>
+        <script>
+            const modal = document.getElementById('modal');
+            function openModal() {
+                modal.showModal();
+            }
+            function closeModal() {
+                modal.close();
+            }
+        </script>
+
+        </div>
+    </dialog>
     <!-- 上部ステータス -->
     <div class="status-box">
         <div class="status-item">
@@ -18,9 +93,9 @@
             <p>目標まで</p>
             <h2>
                 @if($logs->count() > 0 && $target)
-                    {{ number_format($logs->first()->weight - $target->target_weight, 1) }} kg
+                {{ number_format($logs->first()->weight - $target->target_weight, 1) }} kg
                 @else
-                    ---
+                ---
                 @endif
             </h2>
         </div>
@@ -32,11 +107,9 @@
                     {{ number_format($latestLog->weight, 1) }} kg
                     @endif
                 </h2>
-
             </h2>
         </div>
     </div>
-
     <div class="weight-data">
         <!-- 検索 -->
         <form action="/weight_logs/search" method="GET" class="search-box">
@@ -49,7 +122,7 @@
             <a href="/weight_logs" class="reset">リセット</a>
             @endif
 
-            <a href="/weight_logs/create" class="logs_create">データを追加</a>
+            <button type="button" class="logs_create" onclick="openModal()">データを追加</button>
         </form>
 
         <!-- 検索件数 -->
@@ -107,4 +180,20 @@
             {{ $logs->links() }}
         </div>
     </div>
-    @endsection
+
+    <script>
+        function openModal() {
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+
+    @if($errors->any())
+    <script>
+        document.getElementById('modal').style.display = 'block';
+    </script>
+    @endif
+@endsection

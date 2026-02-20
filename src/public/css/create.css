@@ -1,0 +1,127 @@
+/* 背景暗転 */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1000;
+    padding: 40px 0;
+    overflow: auto;
+}
+
+/* モーダル本体 */
+.modal-card {
+    width: 520px;
+    margin: auto;
+    background: #fff;
+    border-radius: 14px;
+    padding: 38px 42px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* タイトル */
+.modal-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+/* 各項目 */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* 必須バッジ */
+.required {
+    background: #ff6b6b;
+    color: #fff;
+    font-size: 11px;
+    padding: 3px 7px;
+    border-radius: 6px;
+    margin-left: 6px;
+}
+
+/* 入力 */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 11px 12px;
+    font-size: 14px;
+    outline: none;
+    transition: .2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #caa6ff;
+    box-shadow: 0 0 0 3px rgba(202, 166, 255, .15);
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* 単位付き入力 */
+.input-unit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-unit span {
+    color: #777;
+    font-size: 14px;
+}
+
+/* エラー */
+.error {
+    color: #ff5a5a;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+/* ボタンエリア */
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 28px;
+}
+
+/* 戻る */
+.btn-back {
+    background: #e5e5e5;
+    border: none;
+    padding: 12px 34px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+}
+
+/* 登録（グラデ） */
+.btn-submit {
+    border: none;
+    padding: 12px 34px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(90deg, #a18cd1, #fbc2eb);
+    box-shadow: 0 6px 16px rgba(161, 140, 209, .4);
+    transition: .2s;
+}
+
+.btn-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(161, 140, 209, .55);
+}

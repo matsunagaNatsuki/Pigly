@@ -188,3 +188,112 @@ body {
     background-color: #f0f0f0;
 }
 
+/* 4. モーダルウィンドウ (<dialog>用) */
+.modal {
+    border: none;
+    border-radius: 15px;
+    padding: 0;
+    height: 80%;
+    margin-top: 50px;
+    max-width: 800px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.modal::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.modal-card {
+    padding: 20px;
+}
+
+.modal-title {
+    margin-top: 0;
+    font-size: 1.8rem;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.required {
+    background: #ff4d4d;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+input[name="day"],
+input[type="text"],
+input[type="time"]{
+    width: 93%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    width: 93%;
+    height: 150px;
+    resize: none;
+}
+
+.input-unit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-unit span {
+    color: #666;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.btn-back {
+    background: #e0e0e0;
+    color: #666;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-submit {
+    background: linear-gradient(to right, #b6b3ff, #ffb6d9);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-back, .btn-submit {
+    box-shadow: 5px 5px 3px #ddd;
+    width: 160px;
+    padding: 12px 0;
+    text-align: center;
+    padding: 12px 35px;
+    border-radius: 6px;
+}
+
+
+
+
+
