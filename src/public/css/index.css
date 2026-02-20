@@ -235,7 +235,7 @@ body {
     margin-left: 5px;
 }
 
-input[name="day"],
+input[class="date"],
 input[type="text"],
 input[type="time"]{
     width: 93%;

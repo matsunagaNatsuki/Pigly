@@ -16,7 +16,7 @@
                 @csrf
                 <div class="form-group">
                     <label>日付 <span class="required">必須</span></label>
-                    <input type="date" name="day" value="{{ old('date', date('Y-m-d')) }}">
+                    <input type="date" name="date" class="date" value="{{ old('date', date('Y-m-d')) }}">
                     <p class="error">@error('date'){{ $message }}@enderror</p>
                 </div>
 
