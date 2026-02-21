@@ -86,7 +86,12 @@ class WeightLogController extends Controller
     }
 
     // 体重更新
-    public function update(Request $request, $weightLogId)
+    public function edit(WeightLog $weightLogId)
+    {
+        return view('edit', compact('weightLogId'));
+    }
+
+    public function update(WeightLogRequest $request, $weightLogId)
     {
         $log = WeightLog::findOrFail($weightLogId);
 
