@@ -25,9 +25,9 @@ class RegisterStep2Request extends FormRequest
     {
         return [
             // 目標体重バリデーション
-            'weight' => ['required', 'numeric', 'max:9999.9', 'regex:/^\d+(\.\d{1})?$/'],
+            'weight' => ['required', 'numeric', 'max:999.9', 'regex:/^\d+(\.\d{1})?$/'],
 
-            'target_weight' => ['required', 'numeric', 'max:9999.9', 'regex:/^\d+(\.\d{1})?$/'],
+            'target_weight' => ['required', 'numeric', 'max:999.9', 'regex:/^\d+(\.\d{1})?$/'],
         ];
     }
 
