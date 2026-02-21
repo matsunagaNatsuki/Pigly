@@ -29,8 +29,8 @@ class WeightLogRequest extends FormRequest
             'weight' => [
                 'required',
                 'numeric',
-                'regex:/^\d{1,3}(\.\d{1})?$/'
-                // 4桁以内 TODO
+                'max:999.9',
+                'regex:/^\d+(\.\d{1})?$/'
             ],
 
             'calories' => ['required', 'numeric'],
@@ -48,8 +48,8 @@ class WeightLogRequest extends FormRequest
 
             'weight.required' => '体重を入力してください',
             'weight.numeric' => '数字で入力してください',
+            'weight.max'   => '4桁までの数字で入力してください',
             'weight.regex' => '小数点は1桁で入力してください',
-            // 4桁以内　TODO
 
             'calories.required' => '摂取カロリーを入力してください',
             'calories.numeric' => '数字で入力してください',
