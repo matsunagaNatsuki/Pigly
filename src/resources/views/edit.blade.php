@@ -49,7 +49,7 @@
 
         <!-- 運動時間 -->
         <div class="form-group">
-            <label>運動時間 (分)</label>
+            <label>運動時間</label>
             <input type="time" name="exercise_time" class="form-control" value="{{ old('exercise_time', $weightLogId->exercise_time) }}">
             @error('exercise_time')
             <span class="text-danger">{{ $message }}</span>
