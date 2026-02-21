@@ -8,7 +8,7 @@
 
 @section('content')
 <div class="container">
-    <h2>体重ログ更新</h2>
+    <h2>Weight Log</h2>
 
     <form method="POST" action="{{ route('weight_logs.update', $weightLogId->id) }}" novalidate>
         @csrf
@@ -60,15 +60,15 @@
         </div>
 
         <!-- ボタン -->
-        <button type="submit" class="btn btn-primary">更新</button>
         <a href="/weight_logs" class="btn btn-secondary">戻る</a>
+        <button type="submit" class="btn btn-primary">更新</button>
     </form>
 
     <!-- ゴミ箱ボタン -->
     <form method="POST" action="{{ route('weight_logs.destroy', $weightLogId->id) }}" class="mt-2">
         @csrf
         @method('DELETE')
-        <button type="submit" class="btn btn-danger">ゴミ箱</button>
+        <button type="submit" class="btn btn-danger">🗑️</button>
     </form>
 </div>
 @endsection
