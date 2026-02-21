@@ -17,7 +17,11 @@
                 <div class="form-group">
                     <label>日付 <span class="required">必須</span></label>
                     <input type="date" name="date" class="date" value="{{ old('date', date('Y-m-d')) }}">
-                    <p class="error">@error('date'){{ $message }}@enderror</p>
+                    <p class="error">
+                        @error('date')
+                            {{ $message }}
+                        @enderror
+                    </p>
                 </div>
 
                 <div class="form-group">
@@ -28,7 +32,7 @@
                     </div>
                     <p class="error">
                         @error('weight')
-                        {{ $message }}
+                            {{ $message }}
                         @enderror
                     </p>
                 </div>
@@ -40,8 +44,8 @@
                         <span>cal</span>
                     </div>
                     <p class="error">
-                        @error('calorie')
-                        {{ $message }}
+                        @error('calories')
+                            {{ $message }}
                         @enderror
                     </p>
                 </div>
@@ -51,7 +55,7 @@
                     <input type="time" name="exercise_time" value="{{ old('exercise_time') }}">
                     <p class="error">
                         @error('exercise_time')
-                        {{ $message }}
+                            {{ $message }}
                         @enderror
                     </p>
                 </div>
@@ -61,7 +65,7 @@
                     <textarea name="exercise_content" placeholder="運動内容を追加">{{ old('exercise_content') }}</textarea>
                     <p class="error">
                         @error('exercise_content')
-                        {{ $message }}
+                            {{ $message }}
                         @enderror
                     </p>
                 </div>
