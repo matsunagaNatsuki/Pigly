@@ -197,6 +197,29 @@
     </div>
 
     <script>
+        flatpickr(".date", {
+            locale: "ja",
+            dateFormat: "Y-m-d",
+            altInput: true,
+            altFormat: "Y年m月d日",
+            allowInput: true,
+            altInputClass: "date",
+        });
+
+        document.querySelectorAll('.under-arrow').forEach((arrow) => {
+            arrow.addEventListener('click', (e) => {
+                const container = e.currentTarget.closest('.calendar-container');
+                const input = container.querySelector('input');
+
+                if (input) {
+                    input.focus();
+                    input.click();
+                }
+            });
+        });
+    </script>
+
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const modal = document.getElementById('modal');
             window.openModal = function() {
