@@ -3,6 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WeightLogController;
+use App\Http\Controllers\WeightTargetController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 
@@ -30,6 +31,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/weight_logs/create', [WeightLogController::class, 'store']);
     // 体重検索
     Route::get('/weight_logs/search', [WeightLogController::class, 'search']);
+    // 目標設定
+    Route::get('/weight_logs/goal_setting', [WeightTargetController::class, 'goalSetting'])->name('goal.setting');
+    Route::post('/weight_logs/goal_setting', [WeightTargetController::class, 'updateGoal'])->name('goal.update');
     // 体重詳細
     Route::get('/weight_logs/{weightLogId}', [WeightLogController::class, 'show']);
     // 体重更新
@@ -37,9 +41,6 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/weight_logs/{weightLogId}/update', [WeightLogController::class, 'update'])->name('weight_logs.update');
     // 体重削除
     Route::delete('/weight_logs/{weightLogId}/delete', [WeightLogController::class, 'destroy'])->name('weight_logs.destroy');
-    // 目標設定
-    Route::get('/weight_logs/goal_setting', [WeightLogController::class, 'goalSetting']);
-    Route::post('/weight_logs/goal_setting', [WeightLogController::class, 'updateGoal']);
 
     // ログアウト
     Route::post('/logout', function () {
