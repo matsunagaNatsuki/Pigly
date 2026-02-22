@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    height: 50px;
+    height: 80px;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
@@ -10,7 +10,7 @@
 
 .header_logo {
     font-family: serif;
-    font-size: 40px;
+    font-size: 50px;
     margin: 0px;
     color: #e082e0;
     font-weight: normal;
@@ -43,8 +43,8 @@
 .setting_icon::before {
     content: "";
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     background: url(/img/setting.png) no-repeat;
     background-size: contain;
     vertical-align: middle;
@@ -58,8 +58,8 @@
     line-height: normal;
     content: "";
     display: inline-block;
-    width: 23px;
-    height: 23px;
+    width: 30px;
+    height: 30px;
     background: url(/img/logout.png) no-repeat;
     background-size: contain;
     vertical-align: middle;
@@ -68,6 +68,3 @@
         top: 2px;
 }
 
-.error {
-    color: red;
-}
