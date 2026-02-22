@@ -15,14 +15,14 @@
 <header class="header">
     <h1 class="header_logo">PiGLy</h1>
     <ul class="nav">
-        <li><a href="/wight_logs/goal_setting" class="setting_icon">目標体重設定</a></li>
+        <li><a href="{{ route('goal.setting') }}" class="setting_icon">目標体重設定</a></li>
         @if(Auth::check())
-            <li>
-                <form action="/logout" method="post">
-                    @csrf
-                    <button type="submit" class="header__logout">ログアウト</button>
-                </form>
-            </li>
+        <li>
+            <form action="/logout" method="post">
+                @csrf
+                <button type="submit" class="header__logout">ログアウト</button>
+            </form>
+        </li>
         @endif
     </ul>
 </header>
