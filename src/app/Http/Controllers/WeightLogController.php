@@ -112,24 +112,4 @@ class WeightLogController extends Controller
         WeightLog::findOrFail($weightLogId)->delete();
         return redirect('/weight_logs');
     }
-
-
-    // 目標設定
-    public function goalSetting()
-    {
-        $target = WeightTarget::where('user_id', Auth::id())->first();
-        return view('weight_logs.goal_setting', compact('target'));
-    }
-
-
-    public function updateGoal(Request $request)
-    {
-        $target = WeightTarget::where('user_id', Auth::id())->first();
-        $target->update([
-            'target_weight' => $request->target_weight,
-        ]);
-
-
-        return redirect('/weight_logs');
-    }
 }
