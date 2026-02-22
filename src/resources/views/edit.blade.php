@@ -18,9 +18,11 @@
         <div class="form-group">
             <label>日付</label>
             <input type="date" name="date" class="form-control" value="{{ old('date', $weightLogId->date) }}">
-            @error('date')
-            <span class="text-danger">{{ $message }}</span>
-            @enderror
+            <p class="error">
+                @error('date')
+                    {{ $message }}
+                @enderror
+            <p>
         </div>
 
         <!-- 体重 -->
@@ -30,9 +32,11 @@
                 <input type="text" name="weight" class="form-control" value="{{ old('weight', $weightLogId->weight) }}" placeholder="例: 50.5">
                 <span>kg</span>
             </div>
-            @error('weight')
-            <span class="text-danger">{{ $message }}</span>
-            @enderror
+            <p class="error">
+                @error('weight')
+                {{ $message }}
+                @enderror
+            </p>
         </div>
 
         <!-- 摂取カロリー -->
@@ -42,27 +46,33 @@
                 <input type="text" name="calories" class="form-control" value="{{ old('calories', $weightLogId->calories) }}">
                 <span>cal</span>
             </div>
-            @error('calories')
-            <span class="text-danger">{{ $message }}</span>
-            @enderror
+            <p class="error">
+                @error('calories')
+                {{ $message }}
+                @enderror
+            <p>
         </div>
 
         <!-- 運動時間 -->
         <div class="form-group">
             <label>運動時間</label>
             <input type="time" name="exercise_time" class="form-control" value="{{ old('exercise_time', $weightLogId->exercise_time) }}">
-            @error('exercise_time')
-            <span class="text-danger">{{ $message }}</span>
-            @enderror
+            <p class="error">
+                @error('exercise_time')
+                {{ $message }}
+                @enderror
+            </p>
         </div>
 
         <!-- 運動内容 -->
         <div class="form-group">
             <label>運動内容</label>
             <textarea name="exercise_content" class="form-control" maxlength="120" placeholder="運動内容を追加">{{ old('exercise_content', $weightLogId->exercise_content) }}</textarea>
-            @error('exercise_content')
-            <span class="text-danger">{{ $message }}</span>
-            @enderror
+            <p class="error">
+                @error('exercise_content')
+                {{ $message }}
+                @enderror
+            </p>
         </div>
 
         <!-- ボタン -->

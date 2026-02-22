@@ -67,3 +67,7 @@
     position: relative;
         top: 2px;
 }
+
+.error {
+    color: red;
+}
