@@ -16,9 +16,11 @@
                 value="{{ old('target_weight', $target->target_weight ?? '') }}">
             <span>kg</span>
 
-            @error('target_weight')
-            <div style="color:red">{{ $message }}</div>
-            @enderror
+            <p class="error">
+                @error('target_weight')
+                {{ $message }}
+                @enderror
+            </p>
 
             <a href="/weight_logs">戻る</a>
             <button type="submit">更新</button>

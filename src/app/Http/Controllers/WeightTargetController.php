@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\WeightTargetRequest;
 use App\Models\WeightTarget;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +16,7 @@ class WeightTargetController extends Controller
     }
 
 
-    public function updateGoal(Request $request)
+    public function updateGoal(WeightTargetRequest $request)
     {
         $target = WeightTarget::firstOrCreate(
             ['user_id' => Auth::id()],
