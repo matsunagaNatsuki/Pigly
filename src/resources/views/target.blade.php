@@ -12,18 +12,21 @@
         <h2 class="form-title">目標体重設定</h2>
         <form action="{{ route('goal.update') }}" method="POST">
             @csrf
-            <input type="text" name="target_weight"
-                value="{{ old('target_weight', $target->target_weight ?? '') }}">
-            <span>kg</span>
+            <div class="input-container">
+                <input type="text" name="target_weight" class="input" value="{{ old('target_weight', $target->target_weight ?? '') }}">
+                <span>kg</span>
+            </div>
 
             <p class="error">
                 @error('target_weight')
-                {{ $message }}
+                    {{ $message }}
                 @enderror
             </p>
 
-            <a href="/weight_logs">戻る</a>
-            <button type="submit">更新</button>
+            <div class="buttons">
+                <a href="/weight_logs" class="btn-return">戻る</a>
+                <button type="submit" class="btn-edit">更新</button>
+            </div>
         </form>
     </div>
 </div>
