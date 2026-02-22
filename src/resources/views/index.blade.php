@@ -18,10 +18,10 @@
                 <!-- 日付 -->
                 <div class="form-group">
                     <label>日付 <span class="required">必須</span></label>
-                    <input type="date" name="date" class="date" value="{{ old('date', date('Y-m-d')) }}">
+                    <input type="text" id="date_picker" name="date" class="date" value="{{ old('date', date('Y-m-d')) }}">
                     <p class="error">
                         @error('date')
-                            {{ $message }}
+                        {{ $message }}
                         @enderror
                     </p>
                 </div>
@@ -35,7 +35,7 @@
                     </div>
                     <p class="error">
                         @error('weight')
-                            {{ $message }}
+                        {{ $message }}
                         @enderror
                     </p>
                 </div>
@@ -49,7 +49,7 @@
                     </div>
                     <p class="error">
                         @error('calories')
-                            {{ $message }}
+                        {{ $message }}
                         @enderror
                     </p>
                 </div>
@@ -60,7 +60,7 @@
                     <input type="time" name="exercise_time" value="{{ old('exercise_time') }}">
                     <p class="error">
                         @error('exercise_time')
-                            {{ $message }}
+                        {{ $message }}
                         @enderror
                     </p>
                 </div>
@@ -71,7 +71,7 @@
                     <textarea name="exercise_content" placeholder="運動内容を追加">{{ old('exercise_content') }}</textarea>
                     <p class="error">
                         @error('exercise_content')
-                            {{ $message }}
+                        {{ $message }}
                         @enderror
                     </p>
                 </div>
@@ -115,9 +115,22 @@
     <div class="weight-data">
         <!-- 検索 -->
         <form action="/weight_logs/search" method="GET" class="search-box">
-            <input type="date" name="from" value="{{ request('from') }}">
+            <div class="calendar-container">
+                <input type="text" name="from" class="date" value="{{ request('from') }}" placeholder="年月日">
+                <div class="under-arrow">
+                    <span class="arrow-icon">▼</span>
+                </div>
+            </div>
+
             <span>〜</span>
-            <input type="date" name="to" value="{{ request('to') }}">
+
+            <div class="calendar-container">
+                <input type="text" name="to" class="date" value="{{ request('to') }}" placeholder="年月日">
+                <div class="under-arrow">
+                    <span class="arrow-icon">▼</span>
+                </div>
+            </div>
+
             <button class="search-btn">検索</button>
 
             @if(request('from') || request('to'))
@@ -160,7 +173,7 @@
                     <td>{{ \Carbon\Carbon::parse($log->date)->format('Y/m/d') }}</td>
                     <td>{{ number_format($log->weight,1) }}kg</td>
                     <td>{{ $log->calories }}cal</td>
-                    <td>{{ $log->exercise_time }}</td>
+                    <td>{{ \Carbon\Carbon::parse($log->exercise_time)->format('H:i') }}</td>
                     <td class="edit-btn">
                         <a href="/weight_logs/{{ $log->id }}/update">
                             <img src="{{ asset('img/pencil.png') }}" alt="edit" class="pencil-icon">
