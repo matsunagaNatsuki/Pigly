@@ -23,7 +23,14 @@
 }
 
 .input-wrap {
-    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.unit {
+    color: #333;
+    margin-top: 15px;
 }
 
 .input-wrap input {
@@ -45,11 +52,3 @@ input:focus {
     color: #ddd;
 }
 
-.unit {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 13px;
-    color: #999;
-}
