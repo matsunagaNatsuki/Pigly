@@ -88,27 +88,28 @@
     <div class="status-box">
         <div class="status-item">
             <p>目標体重</p>
-            <h2>{{ $target->target_weight}} kg</h2>
+            <h2>{{ $target->target_weight}}</h2>
+            <span>kg</span>
         </div>
         <div class="status-item">
             <p>目標まで</p>
             <h2>
                 @if($logs->count() > 0 && $target)
-                {{ number_format($logs->first()->weight - $target->target_weight, 1) }} kg
+                -{{ number_format($logs->first()->weight - $target->target_weight, 1) }}
                 @else
                 ---
                 @endif
             </h2>
+            <span>kg</span>
         </div>
         <div class="status-item">
             <p>最新体重</p>
             <h2>
-                <h2>
-                    @if($latestLog)
-                    {{ number_format($latestLog->weight, 1) }} kg
-                    @endif
-                </h2>
+                @if($latestLog)
+                {{ number_format($latestLog->weight, 1) }}
+                @endif
             </h2>
+            <span>kg</span>
         </div>
     </div>
     <div class="weight-data">
@@ -117,7 +118,7 @@
             <input type="date" name="from" value="{{ request('from') }}">
             <span>〜</span>
             <input type="date" name="to" value="{{ request('to') }}">
-            <button class="btn">検索</button>
+            <button class="search-btn">検索</button>
 
             @if(request('from') || request('to'))
             <a href="/weight_logs" class="reset">リセット</a>
@@ -148,7 +149,7 @@
                 <tr>
                     <th>日付</th>
                     <th>体重</th>
-                    <th>摂取カロリー</th>
+                    <th>食事摂取カロリー</th>
                     <th>運動時間</th>
                     <th></th>
                 </tr>

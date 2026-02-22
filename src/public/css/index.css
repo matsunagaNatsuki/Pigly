@@ -17,6 +17,7 @@ body {
     border-radius: 16px;
     padding: 20px 40px;
     margin-bottom: 30px;
+    height: 150px;
 }
 
 .status-item {
@@ -25,13 +26,28 @@ body {
     position: relative;
 }
 
+.status-item p {
+    padding-left: 50px;
+    text-align: left;
+}
+
+.status-item span {
+    position: relative;
+    top: -35px;
+    right: 10px;
+    font-size: 20px;
+    color: #444;
+}
+
 .status-item:not(:last-child) {
     border-right: 2px solid #ddd;
 }
 
 .status-item h2 {
-    font-size: 32px;
+    font-size: 45px;
     font-weight: 600;
+    padding-left: 50px;
+    text-align: left;
 }
 
 .weight-data {
@@ -53,35 +69,37 @@ body {
     padding: 10px 12px;
     border-radius: 8px;
     border: 1px solid #ddd;
-    font-size: 14px;
+    font-size: 20px;
     background: #fff;
     cursor: pointer;
+    color: #444;
 }
 
 .search-box span {
-    font-size: 14px;
-    color: #888;
+    font-size: 18px;
+    color: #444;
 }
 
-.search-box .btn {
+.search-box .search-btn {
     padding: 10px 18px;
     border-radius: 8px;
     border: none;
     background: #999;
     color: #fff;
     cursor: pointer;
-    font-size: 9px;
+    font-size: 20px;
+    width: 110px;
 }
 
 .search-box .reset{
     padding: 10px 18px;
     border-radius: 8px;
     background: #fff;
-    color: #999;
+    color: #444;
     cursor: pointer;
-    font-size: 9px;
+    font-size: 20px;
     text-decoration: none;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
 }
 
 .logs_create {
@@ -95,24 +113,28 @@ body {
     display: inline-block;
     text-align: center;
     transition: opacity 0.3s;
-    font-size: 12px;
+    font-size: 22px;
     margin-left: auto;
     border: none;
 }
 
 .search-result {
     margin-left: 20px;
+    margin-top: 20px;
+    color: #444;
+    font-size: 1.2rem;
 }
 
 .log-table {
     width: 100%;
     padding: 18px 30px;
+    margin-top: 40px;
 }
 
 .log-table th {
     padding: 8px 20px;
     text-align: center;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 600;
     color: #555;
     border-bottom: 2px solid transparent;
@@ -125,8 +147,9 @@ body {
 .log-table td {
     padding: 16px 10px;
     text-align: center;
-    font-size: 14px;
+    font-size: 20px;
     border-bottom: 1px solid #f0f0f0;
+    color: gray;
 }
 
 .hover-row:hover {
