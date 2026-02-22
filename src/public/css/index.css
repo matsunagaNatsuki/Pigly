@@ -65,17 +65,48 @@ body {
     padding-top: 20px;
 }
 
-.search-box input[type="date"] {
+.calendar-container {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+    width: 250px;
+}
+
+.search-box input[type="text"] {
     padding: 10px 12px;
     border-radius: 8px;
     border: 1px solid #ddd;
+    border: none;
+    outline: none;
     font-size: 20px;
     background: #fff;
     cursor: pointer;
     color: #444;
+    width: 210px;
 }
 
-.search-box span {
+.under-arrow {
+    width: 45px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.arrow-icon {
+    font-size: 14px;
+    color: #ddd;
+}
+
+.calendar-container input::placeholder {
+    color: #ddd;
+}
+
+.calendar-container span {
     font-size: 18px;
     color: #444;
 }
